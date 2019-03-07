@@ -5,9 +5,8 @@ Once vagrant is installed, navigate to this folder and run 'vagrant up' to deplo
 
 Once deployed:
 * type 'vagrant ssh' to log in to the vagrant box.
-* Run 'vncserver' in the box to launch a vnc server with password 'lockheed'
-* Run 'desktop' to launch an xfce4 desktop.
+* Run 'desktop' in the box to launch an xfce4 desktop.
+* After running 'desktop' you can run 'x11server' to launch a vnc server.
 
 Known issues:
-* The desktop doesn't launch correctly if you run it as the vagrant user.  Running 'desktop' is the workaround, but opens the desktop as the root user, not as the vagrant user.  Using the vnc server is workaround.
-* I think some qt applications may not work correctly over the vnc server.  I tried running 'rqt_graph' and it failed.
+* The desktop doesn't launch correctly if you run it as the vagrant user.  Running 'desktop' is the workaround, but opens the desktop as the root user, not as the vagrant user.
