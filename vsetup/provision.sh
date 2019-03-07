@@ -13,6 +13,7 @@ apt-get install -y xfce4-goodies x11vnc
 #make it so anyone can launch the gui - I don't think this works right...
 sudo sed -i 's/allowed_users=.*$/allowed_users=anybody/' /etc/X11/Xwrapper.config
 echo "alias desktop='sudo startxfce4 &'" >> /home/vagrant/.bashrc
+echo "alias vnc='x11vnc -forever -nevershared -noxdamage &'" >> /home/vagrant/.bashrc
 usermod -G tty vagrant
 # set up the vnc server
 # mkdir /home/vagrant/.vnc
