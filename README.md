@@ -10,3 +10,4 @@ Once deployed:
 
 Known issues:
 * The desktop doesn't launch correctly if you run it as the vagrant user.  Running 'desktop' is the workaround, but opens the desktop as the root user, not as the vagrant user.  Using the vnc server is workaround.
+* I think some qt applications may not work correctly over the vnc server.  I tried running 'rqt_graph' and it failed.
