@@ -9,17 +9,17 @@ apt-get install git
 
 #install desktop and vnc server
 apt-get install -y xfce4 virtualbox-guest-dkms virtualbox-guest-utils virtualbox-guest-x11
-apt-get install -y xfce4-goodies tightvncserver
-#make it so anyone can launch the gui
+apt-get install -y xfce4-goodies x11vnc
+#make it so anyone can launch the gui - I don't think this works right...
 sudo sed -i 's/allowed_users=.*$/allowed_users=anybody/' /etc/X11/Xwrapper.config
 echo "alias desktop='sudo startxfce4 &'" >> /home/vagrant/.bashrc
 usermod -G tty vagrant
-#set up the vnc server
-mkdir /home/vagrant/.vnc
-cp /vagrant/vsetup/xstartup /home/vagrant/.vnc/xstartup
-echo 'lockheed' | vncpasswd -f > /home/vagrant/.vnc/passwd
-chown -R vagrant:vagrant /home/vagrant/.vnc
-chmod 0600 /home/vagrant/.vnc/passwd
+# set up the vnc server
+# mkdir /home/vagrant/.vnc
+# cp /vagrant/vsetup/xstartup /home/vagrant/.vnc/xstartup
+# echo 'lockheed' | vncpasswd -f > /home/vagrant/.vnc/passwd
+# chown -R vagrant:vagrant /home/vagrant/.vnc
+# chmod 0600 /home/vagrant/.vnc/passwd
 
 #install ros and dev packages
 sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
