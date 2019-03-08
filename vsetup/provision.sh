@@ -10,10 +10,11 @@ apt-get install git
 #install desktop and vnc server
 apt-get install -y xfce4 virtualbox-guest-dkms virtualbox-guest-utils virtualbox-guest-x11
 apt-get install -y xfce4-goodies x11vnc
+apt-get install xserver-xorg-legacy
 #make it so anyone can launch the gui - I don't think this works right...
 sudo sed -i 's/allowed_users=.*$/allowed_users=anybody/' /etc/X11/Xwrapper.config
-echo "alias desktop='sudo startxfce4 &'" >> /home/vagrant/.bashrc
-echo "alias vnc='x11vnc -forever -nevershared -noxdamage &'" >> /home/vagrant/.bashrc
+echo "alias desktop='startxfce4 &'" >> /home/vagrant/.bashrc
+echo "alias vnc='x11vnc -forever -nevershared -noxfises -noxrecord -noxdamage &'" >> /home/vagrant/.bashrc
 usermod -G tty vagrant
 # set up the vnc server
 # mkdir /home/vagrant/.vnc
